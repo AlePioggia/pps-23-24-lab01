@@ -16,4 +16,12 @@ public interface CircularList {
      * @return a new java.util.Iterator, which yields next elements, circularly
      */
     Iterator<Integer> forwardIterator();
+
+    /**
+     * This method will have next() and hasNext() implemented, since it's an iterator. 
+     * It yields previous elements though.
+     * 
+     * @return a new java.util.Iterator, which yields previous elements, circularly
+     */
+    Iterator<Integer> backwardIterator();
 }
