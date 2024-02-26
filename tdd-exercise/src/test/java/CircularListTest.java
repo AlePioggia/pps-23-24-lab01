@@ -61,5 +61,4 @@ public class CircularListTest {
         this.circularList.add(1);
         this.circularList.add(2);
     }
-
 }
