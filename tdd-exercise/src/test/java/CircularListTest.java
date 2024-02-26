@@ -25,25 +25,22 @@ public class CircularListTest {
 
     @Test
     public void testSize() {
-        this.circularList.add(0);
-        this.circularList.add(1);
-        assertEquals(this.circularList.size(), 2);
+        this.populateList();
+        assertEquals(this.circularList.size(), 3);
     }
 
     @Test
     public void testNext() {
-        this.circularList.add(0);
-        this.circularList.add(1);
+        this.populateList();
         assertEquals(this.circularList.next().get(), 0);
         assertEquals(this.circularList.next().get(), 1);
+        assertEquals(this.circularList.next().get(), 2);
         assertEquals(this.circularList.next().get(), 0);
     }
 
     @Test
     public void testPrevious() {
-        this.circularList.add(0);
-        this.circularList.add(1);
-        this.circularList.add(2);
+        this.populateList();
         assertEquals(this.circularList.previous().get(), 2);
         assertEquals(this.circularList.previous().get(), 1);
         assertEquals(this.circularList.previous().get(), 0);
@@ -52,13 +49,17 @@ public class CircularListTest {
 
     @Test
     public void testReset() {
-        this.circularList.add(0);
-        this.circularList.add(1);
-        this.circularList.add(2);
+        this.populateList();
         this.circularList.next();
         this.circularList.next();
         this.circularList.reset();
         assertEquals(this.circularList.next().get(), 0);
+    }
+
+    private void populateList() {
+        this.circularList.add(0);
+        this.circularList.add(1);
+        this.circularList.add(2);
     }
 
 }
