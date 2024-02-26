@@ -32,30 +32,23 @@ public class CircularListImpl implements CircularList {
 
     @Override
     public Optional<Integer> next() {
-        if (this.iterator.hasNext()) {
-            return Optional.of(this.iterator.next());
-        } else if (!this.iterator.hasNext()) {
+        if (!this.iterator.hasNext()) {
             this.iterator = this.list.listIterator();
-            return Optional.of(this.iterator.next());
         }
-        return Optional.empty();
+        return Optional.of(this.iterator.next());
     }
 
     @Override
     public Optional<Integer> previous() {
-        if (this.iterator.hasPrevious()) {
-            return Optional.of(this.iterator.previous());
-        } else if (!this.iterator.hasPrevious()) {
+        if (!this.iterator.hasPrevious()) {
             this.iterator = this.list.listIterator(list.size());
-            return Optional.of(this.iterator.previous());
         }
-        return Optional.empty();
+        return Optional.of(this.iterator.previous());
     }
 
     @Override
     public void reset() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'reset'");
+        this.iterator = this.list.listIterator();
     }
 
 }
