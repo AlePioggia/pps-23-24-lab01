@@ -3,7 +3,8 @@ package example.model;
 /**
  * This class represent a particular instance of a BankAccount.
  * In particular, a Simple Bank Account allows always the deposit
- * while the withdrawal is allowed only if the balance greater or equal the withdrawal amount
+ * while the withdrawal is allowed only if the balance greater or equal the
+ * withdrawal amount
  */
 public class SimpleBankAccount implements BankAccount {
 
@@ -14,8 +15,9 @@ public class SimpleBankAccount implements BankAccount {
         this.holder = holder;
         this.balance = balance;
     }
+
     @Override
-    public AccountHolder getHolder(){
+    public AccountHolder getHolder() {
         return this.holder;
     }
 
@@ -38,7 +40,7 @@ public class SimpleBankAccount implements BankAccount {
         }
     }
 
-    private boolean isWithdrawAllowed(final double amount){
+    private boolean isWithdrawAllowed(final double amount) {
         return this.balance >= amount;
     }
 

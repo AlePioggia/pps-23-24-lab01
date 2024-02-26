@@ -1,14 +1,25 @@
 package example.model;
 
-public class SimpleBankAccountWithAtm extends SimpleBankAccount {
+public class SimpleBankAccountWithAtm implements BankAccount {
 
-    private static double STANDARD_FEE = 1;
+    private static final double STANDARD_FEE = 1;
 
     private double balance;
     private AccountHolder holder;
 
     public SimpleBankAccountWithAtm(AccountHolder holder, double balance) {
-        super(holder, balance);
+        this.holder = holder;
+        this.balance = balance;
+    }
+
+    @Override
+    public AccountHolder getHolder() {
+        return this.holder;
+    }
+
+    @Override
+    public double getBalance() {
+        return this.balance;
     }
 
     @Override
@@ -29,10 +40,6 @@ public class SimpleBankAccountWithAtm extends SimpleBankAccount {
         return this.holder.getId() == id;
     }
 
-    private void computeFee(double fee) {
-        this.balance -= fee;
-    }
-
     private boolean isWithdrawAllowed(final double amount) {
         return this.balance >= amount;
     }
@@ -40,5 +47,9 @@ public class SimpleBankAccountWithAtm extends SimpleBankAccount {
     private void completeAtmOperation(final Runnable runnable) {
         runnable.run();
         this.computeFee(STANDARD_FEE);
+    }
+
+    private void computeFee(double fee) {
+        this.balance -= fee;
     }
 }
