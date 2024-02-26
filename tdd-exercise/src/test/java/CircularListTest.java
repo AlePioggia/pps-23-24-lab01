@@ -11,7 +11,7 @@ import tdd.CircularListImpl;
  */
 public class CircularListTest {
 
-    CircularList circularList;
+    private CircularList circularList;
 
     @BeforeEach
     public void setUp() {
