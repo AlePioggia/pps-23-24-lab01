@@ -17,7 +17,7 @@ import tdd.CircularListImpl;
  */
 public class CircularListTest {
 
-    CircularList circularList = new CircularListImpl();
+    CircularList circularList;
 
     @BeforeEach
     public void setUp() {
@@ -27,6 +27,33 @@ public class CircularListTest {
     @Test
     public void testIsEmptyMethod() {
         assertTrue(this.circularList.isEmpty());
+    }
+
+    @Test
+    public void testSize() {
+        this.circularList.add(0);
+        this.circularList.add(1);
+        assertEquals(this.circularList.size(), 2);
+    }
+
+    @Test
+    public void testNext() {
+        this.circularList.add(0);
+        this.circularList.add(1);
+        assertEquals(this.circularList.next().get(), 0);
+        assertEquals(this.circularList.next().get(), 1);
+        assertEquals(this.circularList.next().get(), 0);
+    }
+
+    @Test
+    public void testPrevious() {
+        this.circularList.add(0);
+        this.circularList.add(1);
+        this.circularList.add(2);
+        assertEquals(this.circularList.previous().get(), 2);
+        assertEquals(this.circularList.previous().get(), 1);
+        assertEquals(this.circularList.previous().get(), 0);
+        assertEquals(this.circularList.previous().get(), 2);
     }
 
 }
