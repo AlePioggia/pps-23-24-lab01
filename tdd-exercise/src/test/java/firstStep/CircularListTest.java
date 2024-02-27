@@ -1,10 +1,12 @@
+package firstStep;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import tdd.CircularList;
-import tdd.CircularListImpl;
+import tdd.firstStep.CircularList;
+import tdd.firstStep.CircularListImpl;
 
 /**
  * The test suite for testing the CircularList implementation

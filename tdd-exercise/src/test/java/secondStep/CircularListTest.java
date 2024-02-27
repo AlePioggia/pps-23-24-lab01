@@ -1,4 +1,4 @@
-package alternative;
+package secondStep;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -7,8 +7,8 @@ import java.util.Iterator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import tdd.alternative.CircularList;
-import tdd.alternative.CircularListImpl;
+import tdd.secondStep.CircularList;
+import tdd.secondStep.CircularListImpl;
 
 public class CircularListTest {
     private final static int FORWARD_STEPS = 4;

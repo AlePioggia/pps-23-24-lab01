@@ -1,4 +1,4 @@
-package tdd.alternative;
+package tdd.secondStep;
 
 import java.util.ArrayList;
 import java.util.Collections;

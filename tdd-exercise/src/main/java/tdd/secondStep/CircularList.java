@@ -1,4 +1,4 @@
-package tdd.alternative;
+package tdd.secondStep;
 
 import java.util.Iterator;
 
@@ -18,7 +18,8 @@ public interface CircularList {
     Iterator<Integer> forwardIterator();
 
     /**
-     * This method will have next() and hasNext() implemented, since it's an iterator. 
+     * This method will have next() and hasNext() implemented, since it's an
+     * iterator.
      * It yields previous elements though.
      * 
      * @return a new java.util.Iterator, which yields previous elements, circularly
